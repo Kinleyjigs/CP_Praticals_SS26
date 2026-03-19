@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm> // We need this to use the sort() tool
 
 using namespace std;
 
@@ -19,17 +20,16 @@ int main() {
         numbers.push_back(val);
     }
 
-    // 3. Print the original sequence (Forward)
-    cout << "Original sequence: ";
-    for (int i = 0; i < N; i++) {
-        cout << numbers[i] << " ";
-    }
-    cout << endl; // This moves the next text to a new line
+    // 3. Sort the list from smallest to largest
+    sort(numbers.begin(), numbers.end());
 
-    // 4. Print the sequence in reverse (Backward)
-    cout << "Reversed sequence: ";
-    for (int i = N - 1; i >= 0; i--) {
-        cout << numbers[i] << " ";
+    // 4. Go through the sorted list and print only unique numbers
+    cout << "Output: ";
+    for (int i = 0; i < N; i++) {
+        // Print if it's the very first number, OR if it's different from the number right behind it
+        if (i == 0 || numbers[i] != numbers[i - 1]) {
+            cout << numbers[i] << " ";
+        }
     }
     cout << endl;
 
