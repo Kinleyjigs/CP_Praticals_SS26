@@ -1,7 +1,7 @@
 # Johnson's Algorithm Analysis
 
 ## Problem Summary
-Find shortest paths between all pairs of vertices in a weighted, sparse graph that may contain negative edge weights. Johnson's algorithm combines Bellman-Ford and Dijkstra to efficiently solve this problem.
+Determine the shortest path between each pair of vertices in a weighted sparse graph with possible negative edge weights. The Johnson’s Algorithm utilizes Dijkstra and Bellman-Ford Algorithms for determining such solutions effectively.
 
 ## Algorithm Explanation
 Johnson's algorithm works in three main steps:
@@ -36,7 +36,7 @@ This is faster than Floyd-Warshall for sparse graphs (E ≪ V^2).
 Total: O(V^2).
 
 ## Reflection
-Johnson's algorithm is clever because it combines two algorithms to solve a hard problem. It is much better for sparse graphs than Floyd-Warshall. However, it is more complex to implement and understand. The reweighting trick eliminates negative weights while keeping shortest paths correct—this is elegant problem-solving.
+The beauty of Johnson's algorithm lies in the fact that it uses two algorithms to solve a difficult problem. It works much faster in sparse graphs than the Floyd-Warshall algorithm. But, it is much more complicated than the latter in terms of implementation and understanding.
 
 ![alt text](<Screenshot 2026-04-04 at 2.31.27 AM.png>)
 

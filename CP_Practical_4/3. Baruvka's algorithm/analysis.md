@@ -1,26 +1,26 @@
 # Boruvka's Algorithm Analysis
 
 ## Problem Summary
-Build a Minimum Spanning Tree (MST) for an undirected, weighted graph. The result is a tree connecting all vertices with the smallest total edge weight. Boruvka's algorithm is one of the oldest MST algorithms and is naturally parallel.
+Create the MST of an undirected, weighted graph. The output of this process will be a tree that includes all the vertices with the minimum weight of edges in total. One of the earliest developed algorithms for creating an MST is Boruvka's algorithm.
 
 ## Algorithm Explanation
-Boruvka's algorithm works by repeatedly merging components using their cheapest outgoing edges:
+The Boruvka's algorithm consists of iteratively combining the components based on the least cost edges:
 
-1. **Find components**: Initially, each vertex is its own component.
-2. **Find cheapest edge per component**: For each component, find the minimum-weight edge that connects it to another component.
-3. **Add edges**: Add all these edges to the MST and merge components.
-4. **Repeat**: Continue until only one component remains.
+1. **Component identification**: At first, each vertex will be an independent component.
+2. **Cheapest edge from components**: The smallest edge connecting each component with other components needs to be found.
+3. **Edge selection**: Choose those edges and combine components.
+4. **Iteration process**: Repeat steps till one single component is left.
 
-Key Idea: In each round, every component greedily picks its cheapest connection to the outside world. This greedy choice is always safe because of the "cut property" of MSTs.
+Fundamental principle: Every component is greedy and selects its cheapest connection to the remaining graph due to cut property of MST.
 
 Steps:
 
-1. Initialize component data structure (DSU/Union-Find).
-2. While more than one component exists:
-   - For each edge, track the cheapest one for each component pair.
-   - Merge components using these cheapest edges.
-   - Update component count.
-3. Return total weight.
+1. Create DSU or Union-Find structure for components.
+2. Repeat steps while there is more than one component:
+   - Find the cheapest edge connecting two components for each edge.
+   - Combine components through cheapest edges.
+   - Reduce the component count.
+3. Output total weight.
 
 ## Time Complexity Analysis
 - Each round reduces component count (at least halves it).
@@ -38,7 +38,7 @@ Total: O(E log V).
 Total: O(V + E).
 
 ## Reflection
-Boruvka's algorithm is elegant because it naturally parallelizes—each component can independently find its cheapest edge, then all edges are added at once. It's less famous than Kruskal or Prim, but historically important. The algorithm is fast and, for dense graphs, can match or beat other MST algorithms. It teaches well-structured thinking about graph connectivity.
+The beauty of Boruvka’s Algorithm lies in the fact that it can be easily parallelized by getting each component to independently discover its least expensive edge, after which all these edges can simply be joined together. It isn’t as popular as Kruskal and Prim, but it does hold historical significance. The Algorithm is efficient and, in dense graphs, may even outperform others.
 
 
 ![alt text](<Screenshot 2026-04-04 at 2.35.02 AM.png>)

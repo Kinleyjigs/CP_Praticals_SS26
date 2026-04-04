@@ -35,6 +35,6 @@ Total: O(n^3), where n is number of vertices.
 Total: O(n^2).
 
 ## Reflection
-Floyd-Warshall is simple and clean to implement, and it is very useful when we need all-pairs shortest paths. It is slower for large graphs because O(n^3) grows fast, but for small and medium graphs it is a great choice. This algorithm is a good example of dynamic programming on graphs.
+Floyd-Warshall is easy to code and straightforward. Its main strength is its usefulness in finding the shortest path between all pairs of vertices. Floyd-Warshall does not perform well on huge graphs since its complexity is cubic. But for small to moderate-sized graphs, it is one of the best algorithms available.
 
 ![alt text](<Screenshot 2026-04-04 at 1.28.16 AM.png>)
