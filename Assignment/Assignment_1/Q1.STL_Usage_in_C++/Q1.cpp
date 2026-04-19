@@ -6,8 +6,6 @@
 using namespace std;
 
 int main() {
-
-    // ================= VECTOR PART =================
     int N;
     cout << "Enter number of elements (N): ";
     cin >> N;
@@ -25,8 +23,6 @@ int main() {
     }
     cout << "\n\n";
 
-
-    // ================= DEQUE PART =================
     int Q;
     cout << "Enter number of operations (Q): ";
     cin >> Q;
@@ -63,7 +59,7 @@ int main() {
 
         } else {
             cout << "Invalid operation! Try again.\n";
-            i--; // retry this step
+            i--; 
         }
     }
 
@@ -73,8 +69,6 @@ int main() {
     }
     cout << "\n\n";
 
-
-    // ================= ARRAY PART =================
     const int M = 5;
     array<int, M> fixedArr;
 

@@ -44,7 +44,7 @@ int main() {
         cout << "\nNegative weight cycle detected! Shortest paths are not reliable.\n";
     } else {
         cout << "\nShortest distances from source " << source << ":\n";
-        for (int i = 1; i <= V; i++) {   // start from 1, go up to V
+        for (int i = 1; i <= V; i++) { 
             cout << "Vertex " << i << " : ";
             if (dist[i] == INT_MAX)
                 cout << "Unreachable\n";
