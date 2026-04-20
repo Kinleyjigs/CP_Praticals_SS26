@@ -3,10 +3,10 @@
 
 using namespace std;
 
-#define INF 1e9 // Using a large value for infinity
+#define INF 1e9 
 
 void floydWarshall(int V, vector<vector<int>>& graph) {
-    // Create a distance matrix and initialize it with the input graph
+
     vector<vector<long long>> dist(V, vector<long long>(V));
 
     for (int i = 0; i < V; i++) {
@@ -15,11 +15,10 @@ void floydWarshall(int V, vector<vector<int>>& graph) {
         }
     }
 
-    // Main Algorithm: Try every vertex 'k' as an intermediate point
     for (int k = 0; k < V; k++) {
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < V; j++) {
-                // If path through k is shorter, update dist[i][j]
+                
                 if (dist[i][k] + dist[k][j] < dist[i][j]) {
                     dist[i][j] = dist[i][k] + dist[k][j];
                 }
@@ -27,8 +26,6 @@ void floydWarshall(int V, vector<vector<int>>& graph) {
         }
     }
 
-    // Check for Negative Cycles
-    // If distance from a node to itself becomes negative, there is a cycle
     for (int i = 0; i < V; i++) {
         if (dist[i][i] < 0) {
             cout << "Negative cycle detected!" << endl;
@@ -36,7 +33,6 @@ void floydWarshall(int V, vector<vector<int>>& graph) {
         }
     }
 
-    // Print the final distance matrix
     cout << "Shortest distance matrix:" << endl;
     for (int i = 0; i < V; i++) {
         for (int j = 0; j < V; j++) {
