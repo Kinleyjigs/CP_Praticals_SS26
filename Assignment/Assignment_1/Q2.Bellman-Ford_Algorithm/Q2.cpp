@@ -33,6 +33,7 @@ int main() {
     }
 
     bool negativeCycle = false;
+    
     for (auto& [u, v, w] : edges) {
         if (dist[u] != INT_MAX && dist[u] + w < dist[v]) {
             negativeCycle = true;
