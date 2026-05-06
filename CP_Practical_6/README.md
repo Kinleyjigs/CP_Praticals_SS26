@@ -36,3 +36,22 @@ Compared to a regular Trie, which stores every character separately, a Patricia 
 
 **Time complexity:** O(n) 
 
+Manacher's Algorithm is used to find palindromic substrings in a string very efficiently. A palindrome is a word that reads the same forward and backward. What makes this algorithm special is that it can find the longest palindrome in linear time, which is much faster than other methods like a brute force and Rabin karp.
+
+I learned that it works by using symmetry and expanding around the center, while reusing previous results to avoid repeating the same checks. This is why it is faster than brute force or dynamic programming, which take O(n²) time.
+
+Another key idea is preprocessing the string by adding special characters between letters. This helps handle both odd and even length palindromes in the same way and keeps the logic simple.
+
+Overall, I understood that this algorithm is efficient because it reduces unnecessary comparisons and works well even for large strings.
+
+#### For example 
+
+![alt text](image/manacher.png)
+
+- Longest palindrome in "babad" -> "bab"
+- Longest palindrome in "cbbd" -> "bb"
+- Longest palindrome in "a" -> "a"
+- Longest palindrome in "racercar" -> "r"
+
+These results show how the algorithm efficiently finds the longest palindromic substring for different inputs.
+
